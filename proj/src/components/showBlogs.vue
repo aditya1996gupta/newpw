@@ -12,27 +12,27 @@
 
 <script>
 export default {
-  data() {
+  data () {
     return {
       blogs: [],
-      search: ""
+      search: ''
     };
   },
-  created() {
+  created () {
     this.$http
-      .get("https://jsonplaceholder.typicode.com/posts")
-      .then(function(data) {
-        this.blogs = data.body.slice(0, 10);
-      });
+      .get('https://jsonplaceholder.typicode.com/posts')
+      .then(function (data) {
+        this.blogs = data.body.slice(0, 10)
+      })
   },
   computed: {
-    filteredBlogs: function() {
+    filteredBlogs: function () {
       return this.blogs.filter(blog => {
-        return blog.title.match(this.search);
-      });
+        return blog.title.match(this.search)
+      })
     }
   }
-};
+}
 </script>
 
 <style>
